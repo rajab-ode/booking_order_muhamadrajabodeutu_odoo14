@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- booking.serviceteam tree view -->
+        <record id="booking_serviceteam_view_tree" model="ir.ui.view">
+            <field name="name">Jenis team</field>
+            <field name="model">booking.serviceteam</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="team_name"/>
+                    <field name="team_leader"/>
+                    <field name="team_member"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="booking_serviceteam_view_form" model="ir.ui.view">
+            <field name="name">Form service team</field>
+            <field name="model">booking.serviceteam</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Service Team">
+                    <sheet>
+                        <group>
+                            <!-- Add your fields here -->
+                            <field name="team_name"/>
+                            <field name="team_leader"/>
+                            <field name="team_member"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        
+        <record id="booking_serviceteam_action" model="ir.actions.act_window">
+            <field name="name">Daftar service team</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">booking.serviceteam</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Click to add a master shift</p>
+                <p>klik tombol create untuk Service Team baru</p>
+            </field>
+        </record>
+
+        
+    </data>
+
+</odoo>
